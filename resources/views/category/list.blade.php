@@ -21,15 +21,24 @@ crossorigin="anonymous">
 
 
 
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
   @foreach ($categories as $category)
 
-  <div class="card display-inline"  style="width: 18rem;">
-
-  <div class="card-body">
-    <h3>{{ $category->id }} . {{ $category-> name }} </h3>
-    <p class="card-text text-secondary">{{$category-> description }}</p>
+  <tr>
     
+      <td>{{ $category->id }}</td>
+      <td>{{ $category-> name }}</td>
+      <td>{{$category-> description }}</td>
+   <td>
    <span> <a href="/show/{{ $category -> id }}" class="btn btn-success">show </a></span>
    <span> <a href="/edit/{{ $category -> id }}" class="btn btn-primary">edit </a></span>
    
@@ -39,10 +48,10 @@ crossorigin="anonymous">
     @csrf
     <button type="submit" class="btn btn-danger">Delete</button>
 </form>
-  </div>
-</div>
+   </td>
+ 
 
-  
+</tr>
   @endforeach
 
 

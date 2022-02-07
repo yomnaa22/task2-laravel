@@ -26,30 +26,43 @@ crossorigin="anonymous">
     <label for="name" class="form-label">Name</label>
     
     <input type="text"  name="name" class="form-control"  aria-describedby="emailHelp">
-  
+    @if($errors->has('name'))
+    <div class="error text-danger">{{ $errors->first('name') }}</div>
+@endif
+
   </div>
   <div class="mb-3">
     <label for="details" class="form-label">details</label>
     
     <input type="text" class="form-control" name="details">
+    @if($errors->has('details'))
+    <div class="error text-danger">{{ $errors->first('details') }}</div>
+@endif
   </div>
   
   <div class="mb-3">
     <label for="details" class="form-label">slug</label>
     
     <input type="text" class="form-control" name="slug">
+    @if($errors->has('slug'))
+    <div class="error text-danger">{{ $errors->first('slug') }}</div>
+@endif
   </div>
 
   <div class="mb-3">
     <label for="details" class="form-label">is_used</label>
     
     <input type="text" class="form-control" name="is_used">
+   
   </div>
 
   <div class="mb-3">
     <label for="category_id" class="form-label">category id</label>
     
     <input type="text" class="form-control" name="category_id">
+    @if($errors->has('category_id'))
+    <div class="error text-danger">{{ $errors->first('category_id') }}</div>
+@endif
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

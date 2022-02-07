@@ -5,6 +5,8 @@ use App\Models\Article;
 //use Illuminat\Database\Eloquent\Factories\HasFactory;
 //use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticlePostRequest;
+
 
 class ArticleController extends Controller
 {
@@ -22,7 +24,7 @@ class ArticleController extends Controller
         return view('articles.create');
     }
 
-    public function saveArticle(Request $request)
+    public function saveArticle(ArticlePostRequest $request)
     {
         $article = new Article;
         $article -> name = $request -> name;
@@ -72,11 +74,15 @@ class ArticleController extends Controller
 
         return view('articles.edit', ['article' => $article]);
     }
-    public function saveEditArticle(Request $request, $id)
+    public function saveEditArticle(ArticlePostRequest $request, $id)
     {
         $article = Article::find($id);
         $article -> name = $request -> name;
         $article -> details = $request -> details;
+        $article -> slug = $request -> slug;
+        $article -> is_used = $request -> is_used;
+        $article -> category_id = $request -> category_id;
+
         $article->save();            
 
         return redirect()->route('articles.list');

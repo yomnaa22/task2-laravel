@@ -17,12 +17,19 @@ crossorigin="anonymous">
     <label for="name" class="form-label">Name</label>
     
     <input type="text"  name="name" value="{{ $category-> name }}"class="form-control"  aria-describedby="emailHelp">
-  
+    @if($errors->has('name'))
+    <div class="error text-danger">{{ $errors->first('name') }}</div>
+@endif
   </div>
   <div class="mb-3">
     <label for="description" class="form-label">description</label>
     
+   
     <input type="text" class="form-control" value="{{ $category-> description }}" name="description">
+    @if($errors->has('description'))
+    <div class="error text-danger">{{ $errors->first('description') }}</div>
+@endif
+  
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

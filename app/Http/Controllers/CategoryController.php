@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryPostRequest;
 //use Illuminat\Database\Eloquent\Factories\HasFactory;
 //use Illuminate\Database\Eloquent\Model;
 use App\Models\Article;
@@ -23,7 +24,7 @@ class CategoryController extends Controller
         return view('category.create');
     }
 
-    public function save(Request $request)
+    public function save(CategoryPostRequest $request)
     {
         $category = new Category;
         $category -> name = $request -> name;
@@ -67,7 +68,7 @@ class CategoryController extends Controller
 
         return view('category.edit', ['category' => $category]);
     }
-    public function saveEdit(Request $request, $id)
+    public function saveEdit(CategoryPostRequest $request, $id)
     {
         $category = Category::find($id);
         $category -> name = $request -> name;

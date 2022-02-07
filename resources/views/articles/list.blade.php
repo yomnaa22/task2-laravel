@@ -25,7 +25,7 @@ crossorigin="anonymous">
 
   @foreach ($articles as $article)
 
-  <div class=" display-inline"  style="width: 18rem;">
+  <div class=" display-inline border py-5 px-5">
 
  
     <h3>{{ $article->id }} . {{ $article-> name }} </h3>
