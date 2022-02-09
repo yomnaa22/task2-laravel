@@ -20,7 +20,7 @@ crossorigin="anonymous">
   </div>
 </nav>
 
-
+<h3>Hello {{ auth()->user()->name }}</h3>
 
 
   @foreach ($articles as $article)

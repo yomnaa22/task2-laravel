@@ -14,6 +14,9 @@ crossorigin="anonymous">
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/create">Create Category</a>
+    <a href="{{ route('login') }}"> login</a>
+    <a href="{{ route('register') }}"> register</a>
+
     <a class="navbar-brand btn btn-danger text-white" href="/articles">All articles</a>
 
   </div>

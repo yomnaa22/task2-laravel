@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryPostRequest;
+
 //use Illuminat\Database\Eloquent\Factories\HasFactory;
 //use Illuminate\Database\Eloquent\Model;
 use App\Models\Article;
@@ -30,10 +31,12 @@ class CategoryController extends Controller
         $category -> name = $request -> name;
         $category -> description = $request -> description;
         $category->save();            
+  
 
         return redirect()->route('categories.list');
        
     }
+
     public function delete($id)
     {
         $category = Category::find($id);

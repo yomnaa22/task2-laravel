@@ -14,3 +14,5 @@ Route::delete('/delete/{id}', [CategoryController::class, 'delete'])->name('cate
 Route::get('/show/{id}', [CategoryController::class, 'show'])->name('category.show');
 Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/saveEdit/{id}', [CategoryController::class, 'saveEdit'])->name('categories.saveEdit');
+
+require __DIR__.'/auth.php';
