@@ -19,6 +19,7 @@ class ArticleController extends Controller
         return view('articles.list',['articles'=>$articles]);
     }
 
+  
     public function createArticle()
     {
         return view('articles.create');
@@ -89,4 +90,16 @@ class ArticleController extends Controller
         
 
     }
+    public function ArticleTable()
+    {
+         
+        $articles = Article::all(); 
+   
+      
+        return view('dashboard.pages.data',['articles'=>$articles]);
+    }
+
+   
+
+
 }

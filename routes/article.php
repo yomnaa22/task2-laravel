@@ -16,6 +16,8 @@ Route::get('/showArticle/{id}', [ArticleController::class, 'showArticle'])->name
 Route::get('/editArticle/{id}', [ArticleController::class, 'editArticle'])->name('articles.edit');
 Route::post('/saveEditArticle/{id}', [ArticleController::class, 'saveEditArticle'])->name('articles.saveEditArticle');
 
+Route::get('/template',[ArticleController::class, 'ArticleTable'])->name('dashboard.pages.data');
+
 
 require __DIR__.'/auth.php';
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/template', function(){
+    return view('dashboard.pages.data');
+});
+
+
+
+Route::get('/hello', function(){
+    return view('dashboard.pages.hello');
 });
 
 Route::get('/dashboard', function () {
