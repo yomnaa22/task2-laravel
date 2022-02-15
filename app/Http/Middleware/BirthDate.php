@@ -20,7 +20,7 @@ class BirthDate
         $dateOfBirth = auth()->user()->birth_date;
 $age = \Carbon\Carbon::parse($dateOfBirth)->age;
 
-        if ($age> 30) {
+        if ($age > 30) {
             return $next($request);
           }
       else{

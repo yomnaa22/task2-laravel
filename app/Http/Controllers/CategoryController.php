@@ -56,10 +56,10 @@ class CategoryController extends Controller
       //  return view('articles.list',['articals'=>$articals])
 
 
-      $articles = Article::all();
+     // $articles = Article::all();
         $category = Category::find($id);
         
-        return view('category.show', ['category' => $category, 'articles'=>$articles]);
+        return view('category.show', ['category' => $category]);
 
        
         

@@ -17,11 +17,13 @@ crossorigin="anonymous">
     <div>
 <h3>New Articles:</h3>
     <ul class="border">
-         @foreach($articles as $article)
-         @if($article->category_id == $category->id)
-         <li>article name : {{$article->name}}</li>
-         <li>  about {{$article->name}} :<br>{{$article->details}}</li>
-         @endif
+         @foreach($category->articles as $article)
+       
+         <li>article name : {{ $article ->name}}</li>
+         <li>article name : {{ $article ->details}}</li>
+
+         
+        
          @endforeach  
         </ul>
       
