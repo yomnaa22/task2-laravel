@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function list()
     {
          
-        $categories = Category::all(); 
+        $categories = Category::paginate(5); 
         $cat = Category::find(1);
       
         return view('category.list',['categories'=>$categories ]);
